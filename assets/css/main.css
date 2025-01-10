@@ -54,6 +54,10 @@ p {
   padding: 0;
 }
 
+a:hover {
+  cursor:pointer;
+}
+
 .navbar-toggler:focus,
 a:focus,
 input:focus,
@@ -176,6 +180,7 @@ h5 {
 h6 {
   font-size: 16px;
 }
+
 
 ul,
 ol {
