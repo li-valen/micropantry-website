@@ -154,6 +154,7 @@ h6 a {
 
 h1 {
   font-size: 50px;
+  text-shadow: 2px 2px 2px black;
 }
 
 h2 {
