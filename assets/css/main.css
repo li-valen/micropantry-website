@@ -3760,19 +3760,26 @@ blockquote span {
   transition: all 0.4s ease;
   text-align: center;
 }
+.team{
+  background-color: #F4F7FA;
+}
 
 .team .single-team img {
   height: 200px;
   width: 200px;
   border-radius: 50%;
   display: inline-block;
-  background-color: #fff;
+  background-color: #F4F7FA;
   padding: 10px;
   border: 1px solid #eee;
 }
 
 .team .single-team .content {
   padding: 40px 30px;
+}
+
+.goals{
+  background-color: #FFFFFF;
 }
 
 @media (max-width: 767px) {
@@ -4260,7 +4267,7 @@ blockquote span {
 	Pricing Table CSS
 ===============================*/
 .pricing-table {
-  background-color: #F4F7FA;
+  background-color: #FFFFFF;
 }
 
 .pricing-table .section-title {
