@@ -1088,7 +1088,7 @@ ol {
 .section-title {
   text-align: center;
   margin-bottom: 80px;
-  padding: 0 300px;
+  padding: 0 60px;
   position: relative;
   z-index: 5;
 }
@@ -1118,7 +1118,7 @@ ol {
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .section-title {
-    padding: 0px 200px;
+    padding: 0px 20px;
     margin-bottom: 70px;
   }
 }
@@ -3786,7 +3786,7 @@ blockquote span {
   .team .single-team .content {
     display: block;
     text-align: center;
-    padding: 30px;
+    padding: 2px;
   }
 }
 
@@ -3868,13 +3868,13 @@ blockquote span {
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .account-login .login-form {
-    padding: 50px;
+    padding: 2px;
   }
 }
 
 @media (max-width: 767px) {
   .account-login .login-form {
-    padding: 50px 35px;
+    padding: 2px 1px;
   }
 }
 
