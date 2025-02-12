@@ -4587,7 +4587,7 @@ blockquote span {
     Call To Action CSS
 ========================================*/
 .call-action {
-  background-color: #fff;
+  background-color: #081828;
 }
 
 .call-action .inner-content {
@@ -4622,7 +4622,7 @@ blockquote span {
   font-size: 28px;
   font-weight: 700;
   line-height: 42px;
-  color: #081828;
+  color: #FFFFFF;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
