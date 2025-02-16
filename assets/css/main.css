@@ -1418,8 +1418,9 @@ ol {
   z-index: 999999999;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: #161616;
   overflow: hidden;
+  transition: 1s;
 }
 
 .preloader-inner {
@@ -1430,28 +1431,7 @@ ol {
   transform: translate(-50%, -50%);
 }
 
-.preloader-icon {
-  width: 100px;
-  height: 100px;
-  display: inline-block;
-  padding: 0px;
-}
 
-.preloader-icon span {
-  position: absolute;
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  background: #1C365F;
-  -webkit-animation: preloader-fx 1.6s linear infinite;
-  animation: preloader-fx 1.6s linear infinite;
-}
-
-.preloader-icon span:last-child {
-  animation-delay: -0.8s;
-  -webkit-animation-delay: -0.8s;
-}
 
 @keyframes preloader-fx {
   0% {
@@ -1477,6 +1457,53 @@ ol {
   }
 }
 
+.logo-header {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0; /* Remove whitespace effect */
+    color: #ffffff;
+}
+
+.logo {
+    position: relative;
+    bottom: -20px;
+    opacity: 0;
+    font-size: 25px;
+    display: inline-block; 
+}
+
+.logo.active {
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+}
+
+.logo.fade {
+    bottom: 150px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+}
+
+
+.preloader-inner {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  color: #FFFFFF;
+  width: 100%; /* Corrected to 100% for responsiveness */
+}  
+
+.preloader-inner h4 {
+    position: absolute;
+    left: 10%;
+    bottom: 1rem;
+    color: #FFFFFF;
+    font-size: 4.8rem;
+}
+
+/* From the very first image - Intro styles */
 /*======================================
 	01. Start Header CSS
 ========================================*/
@@ -4899,22 +4926,22 @@ blockquote span {
   }
 }
 
-.footer .single-footer.f-about .logo {
+.footer .single-footer.f-about  {
   margin-bottom: 20px;
 }
 
-.footer .single-footer.f-about .logo img {
+.footer .single-footer.f-about img {
   width: 140px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .footer .single-footer.f-about .logo img {
+  .footer .single-footer.f-about img {
     width: 130px;
   }
 }
 
 @media (max-width: 767px) {
-  .footer .single-footer.f-about .logo img {
+  .footer .single-footer.f-about img {
     width: 120px;
   }
 }
