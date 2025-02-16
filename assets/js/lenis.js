@@ -53,20 +53,20 @@ influencerButton.addEventListener("click", () => {
   });
 });
 
-const faqButton = document.getElementById("faq");
-const faqElement = document.getElementById("faq-page");
+const potentialButton = document.getElementById("why");
+const potentialElement = document.getElementById("why-page");
 
-faqButton.addEventListener("click", () => {
-  faqElement.scrollIntoView({
+potentialButton.addEventListener("click", () => {
+  potentialElement.scrollIntoView({
     behavior: "smooth" // Optional for smooth scrolling
   });
 });
 
-const potentialButton = document.getElementById("potential");
-const potentialElement = document.getElementById("potential-page");
+const pricingButton = document.getElementById("pricing-button");
+const pricingElement = document.getElementById("pricing");
 
-potentialButton.addEventListener("click", () => {
-  potentialElement.scrollIntoView({
+pricingButton.addEventListener("click", () => {
+  pricingElement.scrollIntoView({
     behavior: "smooth" // Optional for smooth scrolling
   });
 });

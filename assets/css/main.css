@@ -3718,6 +3718,9 @@ blockquote span {
   padding-top: 80px;
 }
 
+#story-page {
+  background-color: #F4F7FA;
+}
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .blog-grid-page {
     padding-top: 40px;
