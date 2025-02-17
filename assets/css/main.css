@@ -3719,7 +3719,8 @@ blockquote span {
 }
 
 #story-page {
-  background-color: #F4F7FA;
+  background-color: #FFFFFF;
+  ;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .blog-grid-page {
