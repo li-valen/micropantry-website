@@ -3719,7 +3719,7 @@ blockquote span {
 }
 
 #story-page {
-  background-color: #FFFFFF;
+  background-color: #F4F7FA;
   ;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -3792,7 +3792,7 @@ blockquote span {
   text-align: center;
 }
 .team{
-  background-color: #F4F7FA;
+  background-color: #FFFFFF;
 }
 
 .team .single-team img {
@@ -3810,7 +3810,7 @@ blockquote span {
 }
 
 .goals{
-  background-color: #FFFFFF;
+  background-color: #F4F7FA;
 }
 
 @media (max-width: 767px) {
