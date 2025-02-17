@@ -17,15 +17,6 @@ homeButton.addEventListener("click", () => {
   });
 });
 
-const contactButton = document.getElementById("contact");
-const contactElement = document.getElementById("contact-page");
-
-contactButton.addEventListener("click", () => {
-  contactElement.scrollIntoView({
-    behavior: "smooth" // Optional for smooth scrolling
-  });
-});
-
 const featureButton = document.getElementById("feature");
 const featureElement = document.getElementById("feature-page");
 
@@ -67,6 +58,15 @@ const pricingElement = document.getElementById("pricing");
 
 pricingButton.addEventListener("click", () => {
   pricingElement.scrollIntoView({
+    behavior: "smooth" // Optional for smooth scrolling
+  });
+});
+
+const goalsButton = document.getElementById("goals");
+const goalsElement = document.getElementById("contact-page");
+
+goalsButton.addEventListener("click", () => {
+  goalsElement.scrollIntoView({
     behavior: "smooth" // Optional for smooth scrolling
   });
 });
