@@ -3821,6 +3821,13 @@ blockquote span {
   }
 }
 
+.team-image {
+  text-align: center;
+  margin-bottom: 50px;
+  border-radius: 25%;
+  border: 10px solid #1C365F;
+}
+
 .team .single-team .content h4 {
   font-size: 16px;
   font-weight: 600;
