@@ -1,0 +1,50 @@
+
+svg.filters { height:0; width: 0; position: absolute; z-index:-1; }
+.header-text {
+    color: #c8c2bd;
+    font-size: 3em;
+    text-align: center;
+    line-height: 1.0625;
+    font-weight: 600;
+    letter-spacing: -0.009em;
+}
+.glow-filter{
+    position: relative;
+    display: inline-block;
+    scale: 1;
+
+    animation: onloadscale 1s ease-out forwards;
+}
+.glow-filter::before{
+    content: attr(data-text);
+    position: absolute;
+    pointer-events: none;
+    color:  #fffaf6;
+    background: linear-gradient(0deg, #dfe5ee 0%, #fffaf6 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: url(#glow-4);
+    -moz-filter: url(#glow-4);
+    -webkit-filter: url(#glow-4);
+
+    opacity: 0;
+    animation: onloadopacity 1s ease-out forwards;
+}
+@keyframes onloadscale {
+    24% { scale: 1; }
+    100% { scale: 1.02; }
+}
+@keyframes onloadopacity {
+    24% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes onloadbgt {
+    0% { translate: 0 -70%; opacity: 0.3; }
+    100% { translate: 0 -64%; opacity: 0.8; }
+}
+@keyframes onloadbgb {
+    0% { translate: 0 70%; opacity: 0.3; }
+    100% { translate: 0 64%; opacity: 0.8; }
+}
