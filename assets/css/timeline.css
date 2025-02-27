@@ -290,7 +290,7 @@
 }
 @media only screen and (min-width: 768px) {
   .cd-horizontal-timeline .events-content h2 {
-    font-size: 7rem;
+    font-size: 4rem;
   }
   .cd-horizontal-timeline .events-content em {
     font-size: 2rem;
