@@ -48,3 +48,8 @@ svg.filters { height:0; width: 0; position: absolute; z-index:-1; }
     0% { translate: 0 70%; opacity: 0.3; }
     100% { translate: 0 64%; opacity: 0.8; }
 }
+
+.svg-content{
+    overflow: visible;
+    transform: scale(0.5);
+}

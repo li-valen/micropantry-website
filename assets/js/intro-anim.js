@@ -23,6 +23,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
         setTimeout(()=>{
             document.querySelector('.preloader').style.top = '-100vh'
-        }, 2300);
+        }, 5000);
     })
 })
