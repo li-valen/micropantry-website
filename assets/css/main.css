@@ -1459,7 +1459,7 @@ ol {
 
 .logo-header {
     position: absolute;
-    top: 40%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 0; /* Remove whitespace effect */
@@ -1467,21 +1467,20 @@ ol {
 }
 
 .logo {
-    position: relative;
     bottom: -20px;
     opacity: 0;
-    font-size: 25px;
+    font-size: 50px;
     display: inline-block; 
-}
+  }
 
 .logo.active {
-    bottom: 0;
+    bottom: 200px;
     opacity: 1;
     transition: ease-in-out 0.5s;
 }
 
 .logo.fade {
-    bottom: 150px;
+    bottom: 200px;
     opacity: 0;
     transition: ease-in-out 0.5s;
 }

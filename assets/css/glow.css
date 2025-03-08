@@ -8,6 +8,7 @@ svg.filters { height:0; width: 0; position: absolute; z-index:-1; }
     font-weight: 600;
     letter-spacing: -0.009em;
 }
+
 .glow-filter{
     position: relative;
     display: inline-block;
@@ -27,7 +28,6 @@ svg.filters { height:0; width: 0; position: absolute; z-index:-1; }
     filter: url(#glow-4);
     -moz-filter: url(#glow-4);
     -webkit-filter: url(#glow-4);
-
     opacity: 0;
     animation: onloadopacity 1s ease-out forwards;
 }

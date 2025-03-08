@@ -63,6 +63,23 @@ jQuery(document).ready(function($){
 					showNewContent(timelineComponents, timelineTotWidth, 'next');
 				}
 			});
+			timeline.addClass('loaded');
+
+			// Add autoscroll functionality
+			var autoscrollDelay = 3000; // Adjust scroll speed (3 seconds)
+			var autoscrollInterval = setInterval(function() {
+				var nextEvent = timelineComponents['timelineEvents'].filter('.selected').parent('li').next('li').children('a');
+				if (nextEvent.length > 0) {
+					updateTimelinePosition('next', nextEvent, timelineComponents, timelineTotWidth);
+					nextEvent.trigger('click'); // Update the selected event and content
+				} else {
+					clearInterval(autoscrollInterval);
+					var firstEvent = timelineComponents['timelineEvents'].first();
+					updateTimelinePosition('next', firstEvent, timelineComponents, timelineTotWidth);
+					firstEvent.trigger('click');
+				}
+			}, autoscrollDelay);
+		
 		});
 	}
 

@@ -376,3 +376,38 @@
     transform: translateX(0%);
   }
 }
+
+.auto-scroll-controls {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.auto-scroll-btn {
+  background-color: #7b9d6f;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.auto-scroll-btn:hover {
+  background-color: #6a8c5e;
+}
+
+.auto-scroll-speed {
+  margin-left: 20px;
+}
+
+.timeline-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
