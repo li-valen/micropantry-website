@@ -73,7 +73,6 @@ jQuery(document).ready(function($){
 					updateTimelinePosition('next', nextEvent, timelineComponents, timelineTotWidth);
 					nextEvent.trigger('click'); // Update the selected event and content
 				} else {
-					clearInterval(autoscrollInterval);
 					var firstEvent = timelineComponents['timelineEvents'].first();
 					updateTimelinePosition('next', firstEvent, timelineComponents, timelineTotWidth);
 					firstEvent.trigger('click');
