@@ -5153,3 +5153,94 @@ blockquote span {
 .footer .copyright-area p a:hover {
   color: #1C365F;
 }
+
+/* Why Us Section Styles */
+#why-page .section-title {
+    text-align: left;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#why-page .why-us-image {
+    text-align: center;
+    padding: 20px;
+}
+
+#why-page .why-us-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 991px) {
+    #why-page .why-us-image {
+        margin-bottom: 40px;
+    }
+    
+    #why-page .section-title {
+        text-align: center;
+    }
+}
+
+/* Our Story Section Styles */
+#story-page .section-title {
+    text-align: left;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#story-page .story-image {
+    text-align: center;
+    padding: 20px;
+}
+
+#story-page .story-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 991px) {
+    #story-page .story-image {
+        margin-bottom: 40px;
+    }
+    
+    #story-page .section-title {
+        text-align: center;
+    }
+}
+
+/* Founder Image Styles */
+.founder-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+}
+
+.founder-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 991px) {
+    .founder-image {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 767px) {
+    .founder-image {
+        width: 160px;
+        height: 160px;
+    }
+}
