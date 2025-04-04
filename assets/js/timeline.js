@@ -66,6 +66,7 @@ jQuery(document).ready(function($){
 			timeline.addClass('loaded');
 
 			// Add autoscroll functionality
+			/* Commenting out autoscroll for now
 			var autoscrollDelay = 3000; // Adjust scroll speed (3 seconds)
 			var autoscrollInterval = setInterval(function() {
 				var nextEvent = timelineComponents['timelineEvents'].filter('.selected').parent('li').next('li').children('a');
@@ -78,6 +79,7 @@ jQuery(document).ready(function($){
 					firstEvent.trigger('click');
 				}
 			}, autoscrollDelay);
+			*/
 		
 		});
 	}
