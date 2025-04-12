@@ -1418,7 +1418,7 @@ ol {
   z-index: 999999999;
   width: 100%;
   height: 100%;
-  background-color: #161616;
+  background-color: #1C365F;
   overflow: hidden;
   transition: 1s;
 }
@@ -2402,25 +2402,26 @@ ol {
 }
 
 .services .single-service {
-  min-height: 300px;
-  margin-top: 30px;
-  border-radius: 20px;
-  background-color: white;
-  -webkit-box-shadow: 0px 0px 30px rgba(81, 94, 125, 0.082);
-          box-shadow: 0px 0px 30px rgba(81, 94, 125, 0.082);
-  padding: 40px 50px;
-  text-align: center;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
+    min-height: 300px;
+    margin-top: 30px;
+    border-radius: 20px;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 30px rgba(81, 94, 125, 0.082);
+    box-shadow: 0px 0px 30px rgba(81, 94, 125, 0.082);
+    padding: 40px 50px;
+    text-align: center;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
 }
 
 .services .single-service:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  border-top-color: #1C365F;
-  border-bottom-color: #1C365F;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    border-top-color: #1C365F;
+    border-bottom-color: #1C365F;
 }
 
 .services .single-service .main-icon {
@@ -2460,255 +2461,73 @@ ol {
   padding-bottom: 0;
   padding-top: 130px;
 }
-
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .intro-video-area {
     padding-top: 90px;
   }
 }
 
-@media (max-width: 767px) {
-  .intro-video-area {
-    padding-top: 60px;
-  }
+/* Video Modal Styles */
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-.intro-video-area .section-title {
-  margin-bottom: 150px;
-  padding: 0 265px;
+.video-modal .modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 2% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 8px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .intro-video-area .section-title {
-    padding: 0 50px;
-    margin-bottom: 120px;
-  }
+.video-modal .close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+    z-index: 1;
 }
 
-@media (max-width: 767px) {
-  .intro-video-area .section-title {
-    padding: 0 30px;
-    margin-bottom: 100px;
-  }
-  .intro-video-area .section-title h2 {
-    font-size: 20px;
-  }
+.video-modal video {
+    width: 100%;
+    height: auto;
+    max-height: calc(90vh - 40px);
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    background-color: #000;
+    border-radius: 8px;
 }
 
-.intro-video-area .section-title span {
-  display: block;
-  margin-bottom: 20px;
-  color: #1C365F;
-}
-
-@media (max-width: 767px) {
-  .intro-video-area .section-title span {
-    margin-bottom: 10px;
-  }
-}
-
-.intro-video-area::before {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: 0;
-  height: 150px;
-  width: 100%;
-  background-color: #fff;
-  z-index: -1;
-}
-
-.intro-video-area .inner-content-head {
-  padding: 30px;
-  border: 1px solid #eeeeee40;
-  border-radius: 30px;
-  background: #ffffff24;
-}
-
-@media (max-width: 767px) {
-  .intro-video-area .inner-content-head {
-    padding: 0;
-    border: none;
-  }
-}
-
-.intro-video-area .inner-content {
-  background-color: #fff;
-  padding: 100px 0;
-  height: 100%;
-  border-radius: 15px;
-  -webkit-box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.09);
-          box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.09);
-  position: relative;
-  overflow: hidden;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .intro-video-area .inner-content {
-    padding: 50px 0;
-    padding-bottom: 80px;
-  }
-}
-
-@media (max-width: 767px) {
-  .intro-video-area .inner-content {
-    padding: 50px 0;
-  }
-}
-
-.intro-video-area .inner-content .shape1 {
-  height: 120px;
-  width: 120px;
-  position: absolute;
-  right: -60px;
-  bottom: 58px;
-}
-
-@media (max-width: 767px) {
-  .intro-video-area .inner-content .shape1 {
-    width: 80px;
-    height: 80px;
-    right: -50px;
-    bottom: 20px;
-  }
-}
-
-.intro-video-area .inner-content .shape2 {
-  height: 100px;
-  width: 100px;
-  position: absolute;
-  left: -10px;
-  top: 30px;
-}
-
-@media (max-width: 767px) {
-  .intro-video-area .inner-content .shape2 {
-    width: 80px;
-    height: 80px;
-  }
-}
-
-.intro-video-area .intro-video-play {
-  position: relative;
-  z-index: 9;
-}
-
-.intro-video-area .intro-video-play .play-thumb a {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  height: 80px;
-  width: 80px;
-  text-align: center;
-  line-height: 83px;
-  background: #1C365F;
-  border-radius: 50%;
-  padding-left: 5px;
-  font-size: 22px;
-  color: #fff;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .intro-video-area .intro-video-play .play-thumb a {
-    height: 70px;
-    width: 70px;
-    font-size: 20px;
-    line-height: 70px;
-  }
-}
-
-@media (max-width: 767px) {
-  .intro-video-area .intro-video-play .play-thumb a {
-    height: 60px;
-    width: 60px;
-    line-height: 60px;
-    font-size: 18px;
-  }
-}
-
-.intro-video-area .intro-video-play .play-thumb a:hover {
-  background-color: #081828;
-  color: #fff;
-}
-
-.intro-video-area .intro-video-play .play-thumb a::before {
-  position: absolute;
-  content: '';
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  border: 1px solid #1C365F;
-  border-radius: 50%;
-  -webkit-animation: pulse-border-2 1.5s linear infinite;
-  animation: pulse-border-2 1.5s linear infinite;
-}
-
-.intro-video-area .intro-video-play .play-thumb a::after {
-  position: absolute;
-  content: '';
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  border: 1px solid #fff;
-  border-radius: 50%;
-  -webkit-animation: pulse-border 1s linear infinite;
-  animation: pulse-border 1s linear infinite;
-}
-
-@-webkit-keyframes pulse-border {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
-    opacity: 0;
-  }
-}
-
-@keyframes pulse-border {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes pulse-border-2 {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
-    opacity: 0;
-  }
-}
-
-@keyframes pulse-border-2 {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
-    opacity: 0;
-  }
+@media (max-width: 768px) {
+    .video-modal .modal-content {
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        padding: 10px;
+        max-height: 100vh;
+    }
+    
+    .video-modal video {
+        max-height: calc(100vh - 20px);
+        border-radius: 0;
+    }
 }
 
 /*======================================
@@ -5244,3 +5063,114 @@ blockquote span {
         height: 160px;
     }
 }
+
+/* Animation Classes */
+.wow {
+    visibility: hidden;
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* Apply animations to all sections */
+.section-title,
+.hero-area,
+.services,
+.testimonials,
+.pricing-table,
+.our-story,
+.team,
+.footer {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.section-title {
+    animation-name: fadeInUp;
+    animation-delay: 0.2s;
+}
+
+.hero-area {
+    animation-name: fadeInUp;
+    animation-delay: 0.3s;
+}
+
+.services {
+    animation-name: fadeInUp;
+    animation-delay: 0.4s;
+}
+
+.testimonials {
+    animation-name: fadeInUp;
+    animation-delay: 0.5s;
+}
+
+.pricing-table {
+    animation-name: fadeInUp;
+    animation-delay: 0.6s;
+}
+
+.our-story {
+    animation-name: fadeInUp;
+    animation-delay: 0.7s;
+}
+
+.team {
+    animation-name: fadeInUp;
+    animation-delay: 0.8s;
+}
+
+.footer {
+    animation-name: fadeInUp;
+    animation-delay: 0.9s;
+}
+
+/* Apply animations to individual elements */
+.single-service,
+.single-testimonial,
+.single-table,
+.story-content,
+.team-member {
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.single-service {
+    animation-delay: 0.4s;
+}
+
+.single-testimonial {
+    animation-delay: 0.5s;
+}
+
+.single-table {
+    animation-delay: 0.6s;
+}
+
+.story-content {
+    animation-delay: 0.7s;
+}
+
+.team-member {
+    animation-delay: 0.8s;
+}
+

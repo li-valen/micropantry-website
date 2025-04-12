@@ -3,6 +3,15 @@ Template Name: Spark - App Landing Page Template.
 Author: GrayGrids
 */
 
+// Video Modal Functions
+function playVideo(videoSrc) {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('serviceVideo');
+    video.src = videoSrc;
+    modal.style.display = "block";
+    video.play();
+}
+
 (function () {
     //===== Prealoder
 
@@ -45,5 +54,24 @@ Author: GrayGrids
         navbarToggler.classList.toggle("active");
     });
 
+    // Close the modal when clicking the close button
+    document.querySelector('.close').addEventListener('click', function() {
+        const modal = document.getElementById('videoModal');
+        const video = document.getElementById('serviceVideo');
+        modal.style.display = "none";
+        video.pause();
+        video.currentTime = 0;
+    });
+
+    // Close the modal when clicking outside the video
+    window.addEventListener('click', function(event) {
+        const modal = document.getElementById('videoModal');
+        if (event.target == modal) {
+            const video = document.getElementById('serviceVideo');
+            modal.style.display = "none";
+            video.pause();
+            video.currentTime = 0;
+        }
+    });
 
 })();

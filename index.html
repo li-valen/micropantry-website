@@ -441,7 +441,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="single-service">
+                    <div class="single-service" onclick="playVideo('assets/images/video/micronutrients-prototype.mp4')">
                         <div class="main-icon">
                             <i class="lni lni-grid-alt"></i>
                         </div>
@@ -452,7 +452,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
-                    <div class="single-service">
+                    <div class="single-service" onclick="playVideo('assets/images/video/ai-chat-prototype.mp4')">
                         <div class="main-icon">
                             <i class="lni lni-keyword-research"></i>
                         </div>
@@ -460,8 +460,9 @@
                         <p>AI generates recipes and meal plans tailored to goals, preferences, and allergies.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".6s">
-                    <div class="single-service">
+                <!--
+                                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="single-service" onclick="playVideo('assets/images/video/micronutrients-prototype.mp4')">
                         <div class="main-icon">
                             <i class="lni lni-vector"></i>
                         </div>
@@ -470,6 +471,8 @@
                         </p>
                     </div>
                 </div>
+                -->
+
                 <!-- <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
                     <div class="single-service">
                         <div class="main-icon">
@@ -501,6 +504,15 @@
         </div>
     </div>
 
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <video id="serviceVideo" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
 
     <!-- Start Features Area -->
     <section class="freatures section" id="feature-page">
@@ -598,7 +610,7 @@
             </div>
         </div>
     </section>
-    -->
+    !-->
 
     <!-- End Intro Video Area -->
     <!-- Start Team Area -->
@@ -629,12 +641,7 @@
                             <h4>Valen Li
                                 <span>CTO and Co-Founder</span>
                             </h4>
-                            <ul class="social">
-                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
-                            </ul>
+
                         </div>
                     </div>
                     <!-- End Single Team -->
@@ -649,12 +656,7 @@
                             <h4>Vedant Srinivasan
                                 <span>CEO and Co-founder</span>
                             </h4>
-                            <ul class="social">
-                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
-                            </ul>
+
                         </div>
                     </div>
                     <!-- End Single Team -->
