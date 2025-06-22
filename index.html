@@ -470,6 +470,9 @@
                                 Simply take pictures of your meals, pantry, or barcodes, and the system will
                                 automatically track these items for you.
                             </p>
+                            <div class="single-service" onclick="openImage('assets/images/mockup-1.png')">
+                                <p>Click to see a demo</p>
+                            </div>
                         </div>
                         <!-- End Single Feature -->
                         <!-- Start Single Feature -->
@@ -483,6 +486,9 @@
                                 content of your meals and ingredients. Building on the previously mentioned image
                                 detection technology, this process
                                 is easy, efficient, and designed to streamline healthy eating.</p>
+                                <div class="single-service" onclick="openImage('assets/images/video/ai-chat-prototype.mp4')">
+                                    <p>Click to see a demo</p>
+                                </div>
                         </div>
                         <!-- End Single Feature -->
                         <!-- Start Single Feature -->
@@ -497,6 +503,9 @@
                                 goals, body type, allergies,
                                 and other dietary needs, with adaptive learning to continuously improve and refine the
                                 suggestions.</p>
+                                <div class="single-service" onclick="openImage('assets/images/mockup-3.png')">
+                                    <p>Click to see a demo</p>
+                                </div>
                         </div>
                         <!-- End Single Feature -->
                     </div>
@@ -1173,6 +1182,57 @@
             'autoplayVideos': true,
         });
     </script>
+
+    <!-- Media Modal (for image or video) -->
+    <div class="image-modal" id="imageModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); justify-content:center; align-items:center;">
+        <div style="position:relative; background:#fff; border-radius:16px; padding:24px; max-width:90vw; max-height:90vh; box-shadow:0 2px 16px rgba(0,0,0,0.2);">
+            <span id="closeImageModal" style="position:absolute; top:12px; right:20px; font-size:32px; cursor:pointer;">&times;</span>
+            <div id="modalMediaContainer">
+                <!-- Media will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //========= openImage modal function (handles image or video)
+        function openImage(mediaSrc) {
+            var modal = document.getElementById('imageModal');
+            var container = document.getElementById('modalMediaContainer');
+            container.innerHTML = '';
+            var ext = mediaSrc.split('.').pop().toLowerCase();
+            if (["png","jpg","jpeg","gif","svg","webp"].includes(ext)) {
+                var img = document.createElement('img');
+                img.src = mediaSrc;
+                img.alt = 'Demo Screenshot';
+                img.style.maxWidth = '80vw';
+                img.style.maxHeight = '80vh';
+                img.style.borderRadius = '12px';
+                container.appendChild(img);
+            } else if (["mp4","webm","ogg"].includes(ext)) {
+                var vid = document.createElement('video');
+                vid.src = mediaSrc;
+                vid.controls = true;
+                vid.style.maxWidth = '80vw';
+                vid.style.maxHeight = '80vh';
+                vid.style.borderRadius = '12px';
+                container.appendChild(vid);
+            } else {
+                container.innerHTML = '<p>Unsupported media type.</p>';
+            }
+            modal.style.display = 'flex';
+        }
+        document.getElementById('closeImageModal').onclick = function() {
+            document.getElementById('imageModal').style.display = 'none';
+            document.getElementById('modalMediaContainer').innerHTML = '';
+        };
+        document.getElementById('imageModal').onclick = function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+                document.getElementById('modalMediaContainer').innerHTML = '';
+            }
+        };
+    </script>
+
 </body>
 
 </html>
