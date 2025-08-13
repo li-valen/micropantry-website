@@ -400,6 +400,13 @@
             margin: 0;
         }
         
+        /* Consistent testimonial/team image sizing */
+        .single-team .team-image img {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+        }
+        
         .team.section {
             background-color: white;
         }
@@ -459,6 +466,128 @@
             .founder-image img {
                 width: 120px;
                 height: 120px;
+            }
+        }
+        
+        /* Fix testimonial layout */
+        .testimonials .row.justify-content-center {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            justify-content: center !important;
+        }
+        
+        .testimonials .row.justify-content-center > div {
+            flex: 0 0 33.333% !important;
+            max-width: 33.333% !important;
+            margin: 0 10px !important;
+        }
+        
+        /* Fix team image overflow */
+        .single-team .team-image {
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .single-team .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Simple Working Carousel */
+        .simple-carousel {
+            width: 100%;
+            overflow: hidden;
+            background: #f8f9fa;
+            padding: 20px 0;
+            border: 2px solid #e9ecef;
+            margin: 2rem 0;
+        }
+        
+        .carousel-wrapper {
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .carousel-content {
+            display: flex;
+            animation: scroll 20s linear infinite;
+            width: max-content;
+        }
+        
+        .carousel-content:hover {
+            animation-play-state: paused;
+        }
+        
+        .testimonial-card {
+            flex: 0 0 250px;
+            margin: 0 15px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e5e7eb;
+            margin: 0 auto 15px;
+            display: block;
+        }
+        
+        .testimonial-card h4 {
+            margin-bottom: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .testimonial-card p {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.4;
+            margin: 0;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .testimonial-card {
+                flex: 0 0 200px;
+                margin: 0 10px;
+                padding: 15px;
+            }
+            
+            .testimonial-card img {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .testimonial-card h4 {
+                font-size: 16px;
+            }
+            
+            .testimonial-card p {
+                font-size: 12px;
             }
         }
     </style>
@@ -1057,7 +1186,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-12">
                     <div class="story-image wow fadeInLeft" data-wow-delay=".4s">
-                        <img src="assets/images/micropantry-4.jpg" alt="Micro Pantry Logo" style="width: 100%; max-width: 400px;">
+                        <img src="assets/images/micropantry-4.jpg" alt="Micro Pantry Logo" style="width: 100%; max-width: 500px;">
                     </div>
                 </div>
                 <div class="col-lg-6 col-12">
@@ -1188,8 +1317,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="padding-bottom: 32px">
-                <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay=".3s">
+            <div class="row justify-content-center" style="padding-bottom: 32px">
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".3s" style="flex: 0 0 33.333%; max-width: 33.333%;">
                     <!-- Start Single Team -->
                     <div class="single-team">
                         <div class="team-image">
@@ -1198,12 +1327,10 @@
                         <div class="content" style="text-align:center">
                             <h4>Jordan Dill</h4>
                             <h6>#1 Ranked PA High School Basketball Player</h6>
-                            <p>"Competing at the highest level with the Puerto Rico National Team means my diet
-                                must be as strong as my game. Micro Pantry keeps me balanced and ready to perform."</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay=".5s">
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s" style="flex: 0 0 33.333%; max-width: 33.333%;">
                     <!-- Start Single Team -->
                     <div class="single-team">
                         <div class="team-image">
@@ -1212,261 +1339,79 @@
                         <div class="content" style="text-align:center">
                             <h4>Felix Zhao</h4>
                             <h6>Division I Fencer @ New York University</h6>
-                            <p>"Fencing demands speed, agility, and precision. Micro Pantry helps me stay at my best,
-                                ensuring a healthy and consistent diet to optimize my performance at NYU."</p>
                         </div>
                     </div>
-                    <!-- End Single Team -->
                 </div>
-            </div>
-            <div class="row testimonial-slider">
-                <div class="col-lg-6 col-12 ">
-                    <!-- Start Single Testimonial -->
-                    <div class="single-testimonial">
-                        <div class="inner-content">
-
-                            <div class="text">
-                                <p>"Balancing academics and athletics at CalTech requires careful planning and
-                                    discipline.
-                                    Micro Pantry helps me achieve these goals, optimizing my nutrition."</p>
-                            </div>
-                            <div class="author">
-                                <img src="assets/images/people/Dean.png" alt="Dean Yao">
-                                <h4 class="name">Dean Yao
-                                    <span class="deg">Division III Soccer Player @ California Institute of
-                                        Technology</span>
-                                </h4>
-                            </div>
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".5s" style="flex: 0 0 33.333%; max-width: 33.333%;">
+                    <!-- Start Single Team -->
+                    <div class="single-team">
+                        <div class="team-image">
+                            <img src="assets/images/people/Dean.png" alt="Dean Yao">
                         </div>
-                    </div>
-                    <!-- End Single Testimonial -->
-                </div>
-                <div class="col-lg-6 col-12 ">
-                    <div class="single-testimonial">
-                        <div class="inner-content">
-
-                            <div class="text">
-                                <p>"Playing lacrosse requires precise attention to nutrition.
-                                    Micro Pantry allows me to manage my diet, helping me reach peak performance
-                                    on and off the field."</p>
-                            </div>
-                            <div class="author">
-                                <img src="assets/images/people/Henry.png" alt="Henry Zabierek">
-                                <h4 class="name">Henry Zabierek
-                                    <span class="deg">Division I Lacrosse @ University of Pennsylvania</span>
-                                </h4>
-                            </div>
+                        <div class="content" style="text-align:center">
+                            <h4>Dean Yao</h4>
+                            <h6>Division III Soccer Player @ California Institute of Technology</h6>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-12 ">
-                    <div class="single-testimonial">
-                        <div class="inner-content">
-
-                            <div class="text">
-                                <p>"As a baseball player, the right nutrition
-                                    is key to my performance. Micro Pantry makes it easy to maintain reach my health
-                                    goals
-                                    while competing at the highest level."</p>
-                            </div>
-                            <div class="author">
-                                <img src="assets/images/people/Dan.png" alt="Dan Mattefy">
-                                <h4 class="name">Dan Mattefy
-                                    <span class="deg">Division I Baseball Player @ College of the Holy Cross</span>
-                                </h4>
-                            </div>
+            </div>
+            <div class="simple-carousel">
+                <div class="carousel-wrapper">
+                    <div class="carousel-content">
+                        <div class="testimonial-card">
+                            <img src="assets/images/people/Henry.png" alt="Henry Zabierek">
+                            <h4>Henry Zabierek</h4>
+                            <p>Division I Lacrosse @ University of Pennsylvania</p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12 ">
-                    <div class="single-testimonial">
-                        <div class="inner-content">
-
-                            <div class="text">
-                                <p>"Basketball requires strength, endurance, and focus.
-                                    Micro Pantry is instrumental in helping me stay fit, strong, and lead my team to
-                                    success."</p>
-                            </div>
-                            <div class="author">
-                                <img src="assets/images/people/Clare.png" alt="Clare Meyer">
-                                <h4 class="name">Clare Meyer
-                                    <span class="deg">Division I Basketball Player @ Dartmouth</span>
-                                </h4>
-                            </div>
+                        <div class="testimonial-card">
+                            <img src="assets/images/people/Dan.png" alt="Dan Mattefy">
+                            <h4>Dan Mattefy</h4>
+                            <p>Division I Baseball Player @ College of the Holy Cross</p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12 ">
-                    <div class="single-testimonial">
-                        <div class="inner-content">
-
-                            <div class="text">
-                                <p>"Fencing at the Ivy League level requires both physical and mental sharpness.
-                                    Micro Pantry helps me maintain consistency in my diet, ensuring my best results."
-                                </p>
-                            </div>
-                            <div class="author">
-                                <img src="assets/images/people/Ben.png" alt="Ben Serafin">
-                                <h4 class="name">Ben Serafin
-                                    <span class="deg">Division I Fencer @ University of Pennsylvania</span>
-                                </h4>
-                            </div>
+                        <div class="testimonial-card">
+                            <img src="assets/images/people/Clare.png" alt="Clare Meyer">
+                            <h4>Clare Meyer</h4>
+                            <p>Division I Basketball Player @ Dartmouth</p>
                         </div>
-                    </div>
-                </div>
-                <!-- <div class="col-lg-6 col-12 ">
-                    <div class="single-testimonial">
-                        <div class="inner-content">
-                            
-                            <div class="text">
-                                <p>""Fencing demands speed, agility, and precision. Micro Pantry helps me stay at my best, 
-                                    ensuring a healthy and consistent diet to optimize my performance at NYU."</p>
-                            </div>
-                            <div class="author">
-                                <img src="/assets/images/people/Felix.png" alt="#">
-                                <h4 class="name">Felix Zhao 
-                                    <span class="deg">Division I Fencer @ New York University</span>
-                                </h4>
-                            </div>
+                        <div class="testimonial-card">
+                            <img src="assets/images/people/Ben.png" alt="Ben Serafin">
+                            <h4>Ben Serafin</h4>
+                            <p>Division I Fencer @ University of Pennsylvania</p>
                         </div>
-                    </div>
-                </div> -->
-                <div class="col-lg-6 col-12 ">
-                    <div class="single-testimonial">
-                        <div class="inner-content">
-
-                            <div class="text">
-                                <p>"As a track and field athlete at Bates College, every meal counts. Micro Pantry
-                                    gives me the tools to meet my macro needs and keep pushing my limits."</p>
-                            </div>
-                            <div class="author">
-                                <img src="assets/images/people/Benjamin.png" alt="Benjamin Shutta">
-                                <h4 class="name">Benjamin Shutta
-                                    <span class="deg">Division III Track & Field Runner @ Bates College</span>
-                                </h4>
-                            </div>
+                        <div class="testimonial-card">
+                            <img src="assets/images/people/Benjamin.png" alt="Benjamin Shutta">
+                            <h4>Benjamin Shutta</h4>
+                            <p>Division III Track & Field Runner @ Bates College</p>
                         </div>
-                    </div>
-                </div>
-                <!-- <div class="col-lg-6 col-12 ">
-                    <div class="single-testimonial">
-                        <div class="inner-content">
-                            
-                            <div class="text">
-                                <p>"Competing at the highest level with the Puerto Rico National Team means my diet 
-                                    must be as strong as my game. Micro Pantry keeps me balanced and ready to perform."</p>
-                            </div>
-                            <div class="author">
-                                <img src="/assets/images/people/Jordan.png" alt="#">
-                                <h4 class="name">Jordan Dill
-                                    <span class="deg">#1 Ranked PA High School Basketball Player</span>
-                                </h4>
-                            </div>
+                        <div class="testimonial-card">
+                            <img src="assets/images/people/Da'Vid.png" alt="Da'Vid Robinson">
+                            <h4>Da'Vid Robinson</h4>
+                            <p>Track & Soccer Athlete @ Rochester Institute of Technology</p>
                         </div>
-                    </div>
-                </div> -->
-                <div class="col-lg-6 col-12 ">
-                    <div class="single-testimonial">
-                        <div class="inner-content">
-
-                            <div class="text">
-                                <p>"Balancing track and soccer at RIT is intense, but Micro Pantry helps me stay fueled
-                                    and
-                                    prepared, making sure I'm at peak performance for every competition."</p>
-                            </div>
-                            <div class="author">
-                                <img src="assets/images/people/Da'Vid.png" alt="Da'Vid Robinson">
-                                <h4 class="name">Da'Vid Robinson
-                                    <span class="deg">Track & Soccer Athlete @ Rochester Institute of Technology</span>
-                                </h4>
-                            </div>
+                        <div class="testimonial-card">
+                            <img src="assets/images/people/Kemali.png" alt="Kemali Green">
+                            <h4>Kemali Green</h4>
+                            <p>Pro Soccer Player @ United Soccer League One</p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12 ">
-                    <div class="single-testimonial">
-                        <div class="inner-content">
-
-                            <div class="text">
-                                <p>"My performance as a soccer player
-                                    relies on smart nutrition and Micro Pantry has been the edge I needed to stay ahead
-                                    of the competition."</p>
-                            </div>
-                            <div class="author">
-                                <img src="assets/images/people/Kemali.png" alt="Kemali Green">
-                                <h4 class="name">Kemali Green
-                                    <span class="deg">Pro Soccer Player @ United Soccer League One</span>
-                                </h4>
-                            </div>
+                        <div class="testimonial-card">
+                            <img src="assets/images/people/Timo.png" alt="Timo Radionov">
+                            <h4>Timo Radionov</h4>
+                            <p>Division III Squash Player @ Colby University</p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12 ">
-                    <div class="single-testimonial">
-                        <div class="inner-content">
-
-                            <div class="text">
-                                <p>"Squash at Colby University requires focus and endurance. Micro Pantry helps me make
-                                    the dietary decisions that support my success on and off the court."</p>
-                            </div>
-                            <div class="author">
-                                <img src="assets/images/people/Timo.png" alt="Timo Radionov">
-                                <h4 class="name">Timo Radionov
-                                    <span class="deg">Division III Squash Player @ Colby University</span>
-                                </h4>
-                            </div>
+                        <div class="testimonial-card">
+                            <img src="assets/images/people/Fiona.png" alt="Fiona Juday">
+                            <h4>Fiona Juday</h4>
+                            <p>Division III Swimmer and Diver @ Hamilton College</p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12 ">
-                    <div class="single-testimonial">
-                        <div class="inner-content">
-
-                            <div class="text">
-                                <p>"As a diver at Hamilton College, every detail matters. Micro Pantry's personalized
-                                    plans
-                                    give me the advantage I need to outshine my competition in the pool."</p>
-                            </div>
-                            <div class="author">
-                                <img src="assets/images/people/Fiona.png" alt="Fiona Juday">
-                                <h4 class="name">Fiona Juday
-                                    <span class="deg">Division III Swimmer and Diver @ Hamilton College</span>
-                                </h4>
-                            </div>
+                        <div class="testimonial-card">
+                            <img src="assets/images/people/Samuel.png" alt="Samuel Butler">
+                            <h4>Samuel Butler</h4>
+                            <p>Division III Track & Field Athlete @ Pomona College</p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12 ">
-                    <div class="single-testimonial">
-                        <div class="inner-content">
-
-                            <div class="text">
-                                <p>"Track and field at Pomona College is a game of milliseconds. Micro Pantry keeps my
-                                    nutrition sharp, helping me perform my best in every race."</p>
-                            </div>
-                            <div class="author">
-                                <img src="assets/images/people/Samuel.png" alt="Samuel Butler">
-                                <h4 class="name">Samuel Butler
-                                    <span class="deg">Division III Track & Field Athlete @ Pomona College</span>
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12 ">
-                    <div class="single-testimonial">
-                        <div class="inner-content">
-
-                            <div class="text">
-                                <p>"Squash is all about precision and stamina. At Hamilton College, Micro Pantry
-                                    ensures I have the energy and focus to compete at my highest level."</p>
-                            </div>
-                            <div class="author">
-                                <img src="assets/images/people/Joey.png" alt="Joey Applebaum">
-                                <h4 class="name">Joey Applebaum
-                                    <span class="deg">Division III Squash Player @ Hamilton College</span>
-                                </h4>
-                            </div>
+                        <div class="testimonial-card">
+                            <img src="assets/images/people/Joey.png" alt="Joey Applebaum">
+                            <h4>Joey Applebaum</h4>
+                            <p>Division III Squash Player @ Hamilton College</p>
                         </div>
                     </div>
                 </div>
@@ -1513,34 +1458,7 @@
     <script src="assets/js/intro-anim.js"></script>
     <script src="assets/js/timeline.js"></script>
     <script>
-        //========= testimonial 
-        tns({
-            container: '.testimonial-slider',
-            items: 3,
-            slideBy: 'page',
-            autoplay: false,
-            mouseDrag: true,
-            gutter: 0,
-            nav: true,
-            controls: false,
-            responsive: {
-                0: {
-                    items: 1,
-                },
-                540: {
-                    items: 1,
-                },
-                768: {
-                    items: 2,
-                },
-                992: {
-                    items: 2,
-                },
-                1170: {
-                    items: 3,
-                }
-            }
-        });
+        //========= testimonial - Custom infinite scroll carousel is now handled by CSS
         //====== counter up 
         var cu = new counterUp({
             start: 0,
