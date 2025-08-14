@@ -62,11 +62,20 @@ pricingButton.addEventListener("click", () => {
   });
 });
 
-const goalsButton = document.getElementById("goals");
-const goalsElement = document.getElementById("contact-page");
+const teamButton = document.getElementById("team-nav");
+const teamElement = document.getElementById("contact-page");
 
-goalsButton.addEventListener("click", () => {
-  goalsElement.scrollIntoView({
+teamButton.addEventListener("click", () => {
+  teamElement.scrollIntoView({
+    behavior: "smooth" // Optional for smooth scrolling
+  });
+});
+
+const roadmapButton = document.getElementById("roadmap-nav");
+const roadmapElement = document.getElementById("roadmap-page");
+
+roadmapButton.addEventListener("click", () => {
+  roadmapElement.scrollIntoView({
     behavior: "smooth" // Optional for smooth scrolling
   });
 });

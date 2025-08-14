@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="assets/css/glightbox.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.19/dist/lenis.css">
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/timeline.css" />
+
     <link rel="stylesheet" href="assets/css/glow.css" />
     
     <!-- Google Fonts for better typography -->
@@ -360,21 +360,7 @@
             transition: all 0.3s ease;
         }
         
-        /* Timeline */
-        .cd-horizontal-timeline .events-content h2 {
-            font-size: clamp(1.6rem, 3vw, 2rem);
-            font-weight: 600;
-        }
-        
-        .cd-horizontal-timeline .events-content em {
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-        
-        .cd-horizontal-timeline .events-content p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
+
         
         /* Alternating Section Backgrounds */
         .hero.section {
@@ -419,9 +405,7 @@
             background-color: white;
         }
         
-        .timeline.section {
-            background-color: #F4F7FA;
-        }
+
         
         .contact.section {
             background-color: white;
@@ -626,9 +610,21 @@
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
         
+        /* Fix overlapping text in roadmap title */
+        .roadmap .section-title h2 {
+            line-height: 0.8;
+            margin-bottom: 0;
+        }
+        
+        .roadmap .section-title h2 br {
+            display: block;
+            content: "";
+            margin-top: 0.8rem;
+        }
+        
         .roadmap-container {
             display: flex;
-            gap: 30px;
+            gap: 40px;
             margin-top: 60px;
             justify-content: center;
             flex-wrap: wrap;
@@ -636,8 +632,8 @@
         
         .roadmap-column {
             flex: 1;
-            min-width: 300px;
-            max-width: 400px;
+            min-width: 320px;
+            max-width: 380px;
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -836,6 +832,28 @@
             animation-delay: 0.3s;
         }
         
+        /* Better spacing for 3-box layout */
+        .roadmap-column {
+            margin-bottom: 20px;
+        }
+        
+        .roadmap-column .feature-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .roadmap-column .feature-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .roadmap-column .feature-content ul {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -997,9 +1015,7 @@
                                         <a aria-label="Toggle navigation" id="why">Why Us</a>
                                     </li>
 
-                                    <li class="nav-item">
-                                        <a aria-label="Toggle navigation" id="goals">Timeline</a>
-                                    </li>
+
                                     <li class="nav-item">
                                         <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent"
@@ -1014,6 +1030,14 @@
                                             <li class="nav-item"><a href="mail-success.html">Mail Success</a></li>
                                             <li class="nav-item"><a href="404.html">404 Error</a></li>
                                         </ul> -->
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a aria-label="Toggle navigation" id="team-nav">Our Team</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a aria-label="Toggle navigation" id="roadmap-nav">Roadmap</a>
                                     </li>
 
                                     <!--
@@ -1102,7 +1126,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-12">
                     <div class="why-us-image wow fadeInLeft" data-wow-delay=".4s">
-                        <img src="assets/images/micropantry-5.jpg" alt="Micro Pantry Logo" style="width: 100%; max-width: 400px;">
+                        <img src="assets/images/why-us-image.png" alt="Why Us Image" style="width: 100%; max-width: 700px;">
                     </div>
                 </div>
                 <div class="col-lg-6 col-12">
@@ -1225,7 +1249,6 @@
                         <li>Enter your physical information for the most personalized experience.</li>
                         <li>Micro Pantry will make custom suggestions based on your goals.</li>
                     </ul>
-                    <a href="#" class="btn btn-dark mt-3">Learn more</a>
                 </div>
             </div>
             
@@ -1244,7 +1267,6 @@
                         <li>Uses ingredients from your Digital Pantry</li>
                         <li>Scan your groceries to automatically add them to your Digital Pantry!</li>
                     </ul>
-                    <a href="#" class="btn btn-dark mt-3">Learn more</a>
                 </div>
             </div>
             
@@ -1263,7 +1285,6 @@
                         <li>Keep track of all your ingredients using our Digital Pantry.</li>
                         <li>Ingredients are automatically removed once used in a recipe!</li>
                     </ul>
-                    <a href="#" class="btn btn-dark mt-3">Learn more</a>
                 </div>
             </div>
             
@@ -1282,7 +1303,6 @@
                         <li>Use Micro Pantry's food scanning function to log all your meals.</li>
                         <li>Once scanned, each meal's ingredients are automatically removed from your Digital Pantry!</li>
                     </ul>
-                    <a href="#" class="btn btn-dark mt-3">Learn more</a>
                 </div>
             </div>
             
@@ -1301,7 +1321,6 @@
                         <li>Learn the macros of each recipe you plan.</li>
                         <li>Use your Digital Pantry to create recipes!</li>
                     </ul>
-                    <a href="#" class="btn btn-dark mt-3">Learn more</a>
                 </div>
             </div>
         </div>
@@ -1444,8 +1463,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">MicroPantry Development Roadmap</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">Our journey to revolutionize nutrition tracking and pantry management</p>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">MicroPantry Development<br>Roadmap</h2>
                     </div>
                 </div>
             </div>
@@ -1454,56 +1472,7 @@
                 <!-- Release 1.0 Column -->
                 <div class="roadmap-column release-1-0">
                     <div class="release-header">
-                        <h3>Release 1.0</h3>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="lni lni-cog"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h4>Core App Foundation</h4>
-                            <ul>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="lni lni-database"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h4>Basic Food Database</h4>
-                            <ul>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="lni lni-mobile"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h4>Mobile App Launch</h4>
-                            <ul>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Release 1.1 Column -->
-                <div class="roadmap-column release-1-1">
-                    <div class="release-header">
-                        <h3>Release 2.0</h3>
+                        <h3>V1</h3>
                     </div>
                     
                     <div class="feature-card">
@@ -1511,13 +1480,20 @@
                             <i class="lni lni-robot"></i>
                         </div>
                         <div class="feature-content">
-                            <h4>AI Chef Integration</h4>
+                            <h4>AI Assistant Pantry Interactions</h4>
                             <ul>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
+                                <li>Core functionality</li>
+                                <li>Pantry management</li>
+                                <li>Custom recipes</li>
                             </ul>
                         </div>
+                    </div>
+                </div>
+                
+                <!-- Release 2.0 Column -->
+                <div class="roadmap-column release-1-1">
+                    <div class="release-header">
+                        <h3>V2</h3>
                     </div>
                     
                     <div class="feature-card">
@@ -1525,34 +1501,20 @@
                             <i class="lni lni-camera"></i>
                         </div>
                         <div class="feature-content">
-                            <h4>Food Recognition</h4>
+                            <h4>Scanner & Recognition</h4>
                             <ul>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="lni lni-stats-up"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h4>Advanced Analytics</h4>
-                            <ul>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
+                                <li>Scanner functionality</li>
+                                <li>Photo recognition</li>
+                                <li>Recipe scanning</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Release 1.2 Column -->
+                <!-- Release 3.0 Column -->
                 <div class="roadmap-column release-1-2">
                     <div class="release-header">
-                        <h3>Release 3.0</h3>
+                        <h3>V3</h3>
                     </div>
                     
                     <div class="feature-card">
@@ -1560,39 +1522,11 @@
                             <i class="lni lni-users"></i>
                         </div>
                         <div class="feature-content">
-                            <h4>Social Features</h4>
+                            <h4>Advanced Features</h4>
                             <ul>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="lni lni-cloud"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h4>Cloud Integration</h4>
-                            <ul>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="lni lni-heart"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h4>Health Integration</h4>
-                            <ul>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
-                                <li>blah blah blah</li>
+                                <li>Better personalization (choosing what stores you shop at)</li>
+                                <li>Micro nutritional webscraping (based on where you shop at)</li>
+                                <li>Better UI/UX</li>
                             </ul>
                         </div>
                     </div>
@@ -1731,7 +1665,6 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s">Athlete Endorsements and Testimonials</h3>
                         <h2 class="wow fadeInUp" data-wow-delay=".4s">Our Testimonials</h2>
                         <p class="wow fadeInUp" data-wow-delay=".6s">Hear what high-level athletes have said
                             about our app.</p>
@@ -1755,11 +1688,11 @@
                     <!-- Start Single Team -->
                     <div class="single-team">
                         <div class="team-image">
-                            <img src="assets/images/people/Felix.png" alt="Felix Zhao">
+                            <img src="assets/images/people/Kemali.png" alt="Kemali Green">
                         </div>
                         <div class="content" style="text-align:center">
-                            <h4>Felix Zhao</h4>
-                            <h6>Division I Fencer @ New York University</h6>
+                            <h4>Kemali Green</h4>
+                            <h6>Pro Soccer Player @ United Soccer League One</h6>
                         </div>
                     </div>
                 </div>
@@ -1811,9 +1744,9 @@
                             <p>Track & Soccer Athlete @ Rochester Institute of Technology</p>
                         </div>
                         <div class="testimonial-card">
-                            <img src="assets/images/people/Kemali.png" alt="Kemali Green">
-                            <h4>Kemali Green</h4>
-                            <p>Pro Soccer Player @ United Soccer League One</p>
+                            <img src="assets/images/people/Felix.png" alt="Felix Zhao">
+                            <h4>Felix Zhao</h4>
+                            <p>Division III Fencer @ New York University</p>
                         </div>
                         <div class="testimonial-card">
                             <img src="assets/images/people/Timo.png" alt="Timo Radionov">
@@ -1868,9 +1801,9 @@
                             <p>Track & Soccer Athlete @ Rochester Institute of Technology</p>
                         </div>
                         <div class="testimonial-card">
-                            <img src="assets/images/people/Kemali.png" alt="Kemali Green">
-                            <h4>Kemali Green</h4>
-                            <p>Pro Soccer Player @ United Soccer League One</p>
+                            <img src="assets/images/people/Felix.png" alt="Felix Zhao">
+                            <h4>Felix Zhao</h4>
+                            <p>Division III Fencer @ New York University</p>
                         </div>
                         <div class="testimonial-card">
                             <img src="assets/images/people/Timo.png" alt="Timo Radionov">
@@ -1935,7 +1868,7 @@
     <script src="assets/js/count-up.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/intro-anim.js"></script>
-    <script src="assets/js/timeline.js"></script>
+
     <script>
         //========= testimonial - Custom infinite scroll carousel is now handled by CSS
         //====== counter up 
