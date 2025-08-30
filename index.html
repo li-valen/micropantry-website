@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -18,6 +18,7 @@
     <meta name="twitter:title" content="MicroPantry - Plan Smart, Waste Less, Eat Best!" />
     <meta name="twitter:description" content="Empowering individuals to take full control of their nutrition with personalized meal recommendations and smart pantry management." />
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/MicroPaantry-logo.png" />
+    <link rel="canonical" href="https://micropantry.com/" />
 
     <!-- ========================= CSS here ========================= -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -867,14 +868,14 @@
         }
     </style>
     
-    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 </head>
 
 <body>
-    <div class="preloader">
+    <!-- <div class="preloader"> -->
+        <!--
         <div class="preloader-inner">
             <div class="intro">
                 <div class="logo-header">
@@ -984,8 +985,6 @@
             </div>
         </div>
     </div>
-
-    <!-- /End Preloader -->
     <!-- Start Header Area -->
     <header class="header navbar-area">
         <div class="container">
@@ -1077,6 +1076,7 @@
         </div> <!-- container -->
     </header>
     <!-- End Header Area -->
+    <main id="main" role="main">
     <!-- Start Hero Area -->
     <section class="hero-area">
         <div class="container">
@@ -1223,10 +1223,10 @@
 
 
     <!-- Video Modal -->
-    <div class="video-modal" id="videoModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
-        <div class="modal-content" style="position:relative; background:#fff; border-radius:16px; padding:24px; max-width:90vw; max-height:90vh; box-shadow:0 2px 16px rgba(0,0,0,0.2);">
-            <span class="close" style="position:absolute; top:12px; right:20px; font-size:32px; cursor:pointer; color:#333;">&times;</span>
-            <video id="serviceVideo" controls style="max-width:80vw; max-height:80vh; border-radius:12px;">
+    <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Service video" style="display:none;">
+        <div class="modal-content">
+            <span class="close" role="button" tabindex="0" aria-label="Close video">&times;</span>
+            <video id="serviceVideo" controls>
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -1359,7 +1359,7 @@
             </div>
         </div>
     </section>
-    !-->
+    -->
 
     <!-- End Intro Video Area -->
     <!-- Start Team Area -->
@@ -1384,7 +1384,7 @@
                     <!-- Start Single Team -->
                     <div class="single-team">
                         <div class="founder-image">
-                            <img src="assets/images/valen.png" alt="Valen Li">
+                            <img loading="lazy" src="assets/images/valen.png" alt="Valen Li">
                         </div>
                         <div class="content">
                             <h4>Valen Li
@@ -1399,7 +1399,7 @@
                     <!-- Start Single Team -->
                     <div class="single-team">
                         <div class="founder-image">
-                            <img src="assets/images/dantheadshot.jpg" alt="Vedant Srinivasan">
+                            <img loading="lazy" src="assets/images/dantheadshot.jpg" alt="Vedant Srinivasan">
                         </div>
                         <div class="content">
                             <h4>Vedant Srinivasan
@@ -1414,7 +1414,7 @@
                     <!-- Start Single Team -->
                     <div class="single-team">
                         <div class="founder-image">
-                            <img src="assets/images/nedheadshot .jpg" alt="Ned">
+                            <img loading="lazy" src="assets/images/nedheadshot .jpg" alt="Ned">
                         </div>
                         <div class="content">
                             <h4>Ned
@@ -1429,7 +1429,7 @@
                     <!-- Start Single Team -->
                     <div class="single-team">
                         <div class="founder-image">
-                            <img src="assets/images/liemheadshot.jpg" alt="Liem">
+                            <img loading="lazy" src="assets/images/liemheadshot.jpg" alt="Liem">
                         </div>
                         <div class="content">
                             <h4>Liem
@@ -1444,7 +1444,7 @@
                     <!-- Start Single Team -->
                     <div class="single-team">
                         <div class="founder-image">
-                            <img src="assets/images/lukeheadshot.jpg" alt="Luke">
+                            <img loading="lazy" src="assets/images/lukeheadshot.jpg" alt="Luke">
                         </div>
                         <div class="content">
                             <h4>Luke
@@ -1542,7 +1542,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-12">
                     <div class="story-image wow fadeInLeft" data-wow-delay=".4s">
-                        <img src="assets/images/micropantry-4.jpg" alt="Micro Pantry Logo" style="width: 100%; max-width: 500px;">
+                        <img loading="lazy" src="assets/images/micropantry-4.jpg" alt="Micro Pantry Logo" style="width: 100%; max-width: 500px;">
                     </div>
                 </div>
                 <div class="col-lg-6 col-12">
@@ -1674,7 +1674,7 @@
                     <!-- Start Single Team -->
                     <div class="single-team">
                         <div class="team-image">
-                            <img src="assets/images/people/Jordan.png" alt="Jordan Dill">
+                            <img loading="lazy" src="assets/images/people/Jordan.png" alt="Jordan Dill">
                         </div>
                         <div class="content" style="text-align:center">
                             <h4>Jordan Dill</h4>
@@ -1687,7 +1687,7 @@
                     <!-- Start Single Team -->
                     <div class="single-team">
                         <div class="team-image">
-                            <img src="assets/images/people/Felix.png" alt="Felix Zhao">
+                            <img loading="lazy" src="assets/images/people/Felix.png" alt="Felix Zhao">
                         </div>
                         <div class="content" style="text-align:center">
                             <h4>Felix Zhao</h4>
@@ -1860,7 +1860,7 @@
     </section>
     <!-- ========================= JS here ========================= -->
     <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
+    <!-- <script src="assets/js/wow.min.js"></script> -->
     <script src="assets/js/animate-svg.js"></script>
     <script src="assets/js/tiny-slider.js"></script>
     <script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
@@ -1868,7 +1868,7 @@
     <script src="assets/js/glightbox.min.js"></script>
     <script src="assets/js/count-up.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/intro-anim.js"></script>
+    <!-- <script src="assets/js/intro-anim.js"></script> -->
 
     <script>
         //========= testimonial - Custom infinite scroll carousel is now handled by CSS
@@ -1892,9 +1892,9 @@
     </script>
 
     <!-- Media Modal (for image or video) -->
-    <div class="image-modal" id="imageModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); justify-content:center; align-items:center;">
-        <div style="position:relative; background:#fff; border-radius:16px; padding:24px; max-width:90vw; max-height:90vh; box-shadow:0 2px 16px rgba(0,0,0,0.2);">
-            <span id="closeImageModal" style="position:absolute; top:12px; right:20px; font-size:32px; cursor:pointer;">&times;</span>
+    <div class="image-modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Media viewer" style="display:none;">
+        <div class="modal-content">
+            <span id="closeImageModal" role="button" tabindex="0" aria-label="Close media">&times;</span>
             <div id="modalMediaContainer">
                 <!-- Media will be injected here -->
             </div>
@@ -1928,43 +1928,51 @@
                 container.innerHTML = '<p>Unsupported media type.</p>';
             }
             modal.style.display = 'flex';
+            document.getElementById('closeImageModal').focus();
         }
         
-        //========= playVideo function for service videos
-        function playVideo(videoSrc) {
-            var modal = document.getElementById('videoModal');
-            var video = document.getElementById('serviceVideo');
-            video.src = videoSrc;
-            modal.style.display = 'block';
-        }
-        
-        //========= close video modal
-        document.querySelector('.close').onclick = function() {
-            document.getElementById('videoModal').style.display = 'none';
-            document.getElementById('serviceVideo').pause();
-            document.getElementById('serviceVideo').src = '';
-        }
-        
-        //========= close modal when clicking outside
-        window.onclick = function(event) {
-            var modal = document.getElementById('videoModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-                document.getElementById('serviceVideo').pause();
-                document.getElementById('serviceVideo').src = '';
+        // a11y: Close image modal on ESC and trap focus
+        document.addEventListener('keydown', function(e) {
+            var imageModal = document.getElementById('imageModal');
+            if (imageModal.style.display === 'flex') {
+                if (e.key === 'Escape') {
+                    imageModal.style.display = 'none';
+                    document.getElementById('modalMediaContainer').innerHTML = '';
+                }
+                if (e.key === 'Tab') {
+                    e.preventDefault();
+                    document.getElementById('closeImageModal').focus();
+                }
             }
-        }
+        });
         
         document.getElementById('closeImageModal').onclick = function() {
             document.getElementById('imageModal').style.display = 'none';
             document.getElementById('modalMediaContainer').innerHTML = '';
         };
+        document.getElementById('closeImageModal').addEventListener('keydown', function(e){
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                document.getElementById('closeImageModal').click();
+            }
+        });
         document.getElementById('imageModal').onclick = function(e) {
             if (e.target === this) {
                 this.style.display = 'none';
                 document.getElementById('modalMediaContainer').innerHTML = '';
             }
         };
+    </script>
+
+    </main>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MicroPantry",
+      "url": "https://micropantry.com/",
+      "logo": "https://micropantry.com/assets/images/logo.png"
+    }
     </script>
 
 </body>

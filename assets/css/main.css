@@ -2492,6 +2492,45 @@ ol {
     flex-direction: column;
 }
 
+/* Image Modal Styles */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.image-modal .modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 2% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 8px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+}
+
+.image-modal #closeImageModal {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+    z-index: 1;
+}
+
 .video-modal .close {
     position: absolute;
     right: 20px;
@@ -5090,57 +5129,18 @@ blockquote span {
     }
 }
 
-/* Apply animations to all sections */
-.section-title,
-.hero-area,
-.services,
-.testimonials,
-.pricing-table,
-.our-story,
-.team,
-.footer {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-}
-
+/* Tasteful animations: only specific elements */
 .section-title {
-    animation-name: fadeInUp;
-    animation-delay: 0.2s;
+    animation: fadeInUp 0.8s ease both 0.1s;
 }
 
-.hero-area {
-    animation-name: fadeInUp;
-    animation-delay: 0.3s;
-}
-
-.services {
-    animation-name: fadeInUp;
-    animation-delay: 0.4s;
-}
-
-.testimonials {
-    animation-name: fadeInUp;
-    animation-delay: 0.5s;
-}
-
-.pricing-table {
-    animation-name: fadeInUp;
-    animation-delay: 0.6s;
-}
-
-.our-story {
-    animation-name: fadeInUp;
-    animation-delay: 0.7s;
-}
-
-.team {
-    animation-name: fadeInUp;
-    animation-delay: 0.8s;
-}
-
-.footer {
-    animation-name: fadeInUp;
-    animation-delay: 0.9s;
+.features-demo .row,
+.single-service,
+.single-testimonial,
+.single-table,
+.story-content,
+.team .single-team {
+    animation: fadeInUp 0.8s ease both;
 }
 
 /* Apply animations to individual elements */
@@ -5172,5 +5172,10 @@ blockquote span {
 
 .team-member {
     animation-delay: 0.8s;
+}
+
+/* When WOW is disabled, ensure elements are visible */
+.wow {
+    visibility: visible;
 }
 
