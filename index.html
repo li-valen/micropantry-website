@@ -866,6 +866,82 @@
                 transform: translateY(0);
             }
         }
+        
+        /* Popup Notification Styles */
+        .popup-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            max-width: 350px;
+            transform: translateX(400px);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            font-family: 'Outfit', sans-serif;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .popup-notification.show {
+            transform: translateX(0);
+        }
+        
+        .popup-notification h4 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .popup-notification p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .popup-close:hover {
+            opacity: 1;
+        }
+        
+        /* Download Counter Styles */
+        .download-counter {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        .download-counter h3 {
+            margin: 0 0 5px 0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .download-counter p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
     </style>
     
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -874,6 +950,13 @@
 </head>
 
 <body>
+    <!-- Popup Notification -->
+    <div class="popup-notification" id="popupNotification">
+        <button class="popup-close" onclick="closePopup()">&times;</button>
+        <h4>🎉 New Patch Out!</h4>
+        <p>Release of MicroPantry 1.0.0 is now available!</p>
+    </div>
+    
     <!-- <div class="preloader"> -->
         <!--
         <div class="preloader-inner">
@@ -1418,6 +1501,21 @@
                         </div>
                         <div class="content">
                             <h4>Ned
+                                <span>VP of Technology</span>
+                            </h4>
+                        </div>
+                    </div>
+                    <!-- End Single Team -->
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6 col-12 wow fadeInUp" data-wow-delay=".6s">
+                    <!-- Start Single Team -->
+                    <div class="single-team">
+                        <div class="founder-image">
+                            <img loading="lazy" src="assets/images/pranav.png" alt="Pranav">
+                        </div>
+                        <div class="content">
+                            <h4>Pranav
                                 <span>Creative Director</span>
                             </h4>
                         </div>
@@ -1444,11 +1542,26 @@
                     <!-- Start Single Team -->
                     <div class="single-team">
                         <div class="founder-image">
-                            <img loading="lazy" src="assets/images/lukeheadshot.jpg" alt="Luke">
+                            <img loading="lazy" src="assets/images/luke.jpeg" alt="Luke">
                         </div>
                         <div class="content">
                             <h4>Luke
                                 <span>Marketing Director</span>
+                            </h4>
+                        </div>
+                    </div>
+                    <!-- End Single Team -->
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6 col-12 wow fadeInUp" data-wow-delay="1.0s">
+                    <!-- Start Single Team -->
+                    <div class="single-team">
+                        <div class="founder-image">
+                            <img loading="lazy" src="assets/images/garret.jpeg" alt="Garret">
+                        </div>
+                        <div class="content">
+                            <h4>Garret
+                                <span>VP of Marketing</span>
                             </h4>
                         </div>
                     </div>
@@ -1858,6 +1971,9 @@
                             <h2>Download Our App &
                                 <br> Start your free trial today.
                             </h2>
+                            <div class="download-counter">
+                                <h3><span class="download-count">1.7k</span> Downloads</h3>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-5 col-12">
@@ -1903,6 +2019,75 @@
             'width': 900,
             'autoplayVideos': true,
         });
+        
+        // Popup Notification and Download Counter
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show popup notification after 2 seconds
+            setTimeout(function() {
+                const popup = document.getElementById('popupNotification');
+                if (popup) {
+                    popup.classList.add('show');
+                }
+            }, 2000);
+            
+            // Auto-hide popup after 8 seconds
+            setTimeout(function() {
+                const popup = document.getElementById('popupNotification');
+                if (popup && popup.classList.contains('show')) {
+                    popup.classList.remove('show');
+                }
+            }, 10000);
+            
+            // Initialize download counter
+            initializeDownloadCounter();
+        });
+        
+        function closePopup() {
+            const popup = document.getElementById('popupNotification');
+            if (popup) {
+                popup.classList.remove('show');
+            }
+        }
+        
+        function initializeDownloadCounter() {
+            // Starting values
+            const startDownloads = 1700;
+            const dailyIncrease = 400;
+            
+            // Calculate current downloads based on days since start
+            const startDate = new Date('2024-01-01'); // Adjust this date as needed
+            const currentDate = new Date();
+            const daysDiff = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24));
+            const currentDownloads = startDownloads + (daysDiff * dailyIncrease);
+            
+            // Update counter every second to show growth
+            let displayCount = startDownloads;
+            const targetCount = currentDownloads;
+            const increment = Math.max(1, Math.floor((targetCount - startDownloads) / 100));
+            
+            const counterInterval = setInterval(function() {
+                displayCount += increment;
+                if (displayCount >= targetCount) {
+                    displayCount = targetCount;
+                    clearInterval(counterInterval);
+                }
+                
+                // Update all download counter elements
+                const counters = document.querySelectorAll('.download-count');
+                counters.forEach(function(counter) {
+                    counter.textContent = formatNumber(displayCount);
+                });
+            }, 50);
+        }
+        
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1) + 'M';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(1) + 'k';
+            }
+            return num.toString();
+        }
     </script>
 
     <!-- Media Modal (for image or video) -->
