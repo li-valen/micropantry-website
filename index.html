@@ -1205,6 +1205,7 @@
     </section> -->
 
     <!-- Release Banner -->
+    <!--
     <div class="release-banner" id="releaseBanner">
         <button class="close-btn" onclick="closeBanner()">&times;</button>
         <h4>🎉 New Patch Out!</h4>
@@ -1213,6 +1214,7 @@
             Current downloads so far: <span style="color: #ffd700;">1.7k</span>
         </div>
     </div>
+    -->
 
     <section class="blog-section section" id="why-page">
         <div class="container">
@@ -1664,6 +1666,7 @@
     <!-- End Roadmap Section -->
     
     <!-- Start Reviews Section -->
+    <!--
     <section class="testimonials section" id="reviews-section">
         <div class="container">
             <div class="row">
@@ -1699,6 +1702,7 @@
             </div>
         </div>
     </section>
+    -->
     <!-- End Reviews Section -->
     
     <section class="blog-section section" id="story-page">
@@ -2018,14 +2022,16 @@
             <div class="inner-content">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-7 col-12">
-                        <div class="text">
-                            <h2>Download Our App &
-                                <br> Start your free trial today.
-                            </h2>
-                            <div class="download-counter">
-                                <h3><span class="download-count">1.7k</span> Downloads</h3>
-                            </div>
+                    <div class="text">
+                        <h2>Download Our App &
+                            <br> Start your free trial today.
+                        </h2>
+                        <!--
+                        <div class="download-counter">
+                            <h3><span class="download-count">1.7k</span> Downloads</h3>
                         </div>
+                        -->
+                    </div>
                     </div>
                     <div class="col-lg-6 col-md-5 col-12">
                         <div class="button">
@@ -2070,57 +2076,57 @@
         });
         
         // Release Banner and Download Counter
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize download counter
-            initializeDownloadCounter();
-        });
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     // Initialize download counter
+        //     initializeDownloadCounter();
+        // });
         
-        function closeBanner() {
-            const banner = document.getElementById('releaseBanner');
-            if (banner) {
-                banner.style.display = 'none';
-            }
-        }
+        // function closeBanner() {
+        //     const banner = document.getElementById('releaseBanner');
+        //     if (banner) {
+        //         banner.style.display = 'none';
+        //     }
+        // }
         
-        function initializeDownloadCounter() {
-            // Starting values
-            const startDownloads = 1700;
-            const dailyIncrease = 400;
-            
-            // Calculate current downloads based on days since start
-            const startDate = new Date('2024-01-01'); // Adjust this date as needed
-            const currentDate = new Date();
-            const daysDiff = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24));
-            const currentDownloads = startDownloads + (daysDiff * dailyIncrease);
-            
-            // Update counter every second to show growth
-            let displayCount = startDownloads;
-            const targetCount = currentDownloads;
-            const increment = Math.max(1, Math.floor((targetCount - startDownloads) / 100));
-            
-            const counterInterval = setInterval(function() {
-                displayCount += increment;
-                if (displayCount >= targetCount) {
-                    displayCount = targetCount;
-                    clearInterval(counterInterval);
-                }
-                
-                // Update all download counter elements
-                const counters = document.querySelectorAll('.download-count');
-                counters.forEach(function(counter) {
-                    counter.textContent = formatNumber(displayCount);
-                });
-            }, 50);
-        }
+        // function initializeDownloadCounter() {
+        //     // Starting values
+        //     const startDownloads = 1700;
+        //     const dailyIncrease = 400;
+        //     
+        //     // Calculate current downloads based on days since start
+        //     const startDate = new Date('2024-01-01'); // Adjust this date as needed
+        //     const currentDate = new Date();
+        //     const daysDiff = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24));
+        //     const currentDownloads = startDownloads + (daysDiff * dailyIncrease);
+        //     
+        //     // Update counter every second to show growth
+        //     let displayCount = startDownloads;
+        //     const targetCount = currentDownloads;
+        //     const increment = Math.max(1, Math.floor((targetCount - startDownloads) / 100));
+        //     
+        //     const counterInterval = setInterval(function() {
+        //         displayCount += increment;
+        //         if (displayCount >= targetCount) {
+        //             displayCount = targetCount;
+        //             clearInterval(counterInterval);
+        //         }
+        //         
+        //         // Update all download counter elements
+        //         const counters = document.querySelectorAll('.download-count');
+        //         counters.forEach(function(counter) {
+        //             counter.textContent = formatNumber(displayCount);
+        //         });
+        //     }, 50);
+        // }
         
-        function formatNumber(num) {
-            if (num >= 1000000) {
-                return (num / 1000000).toFixed(1) + 'M';
-            } else if (num >= 1000) {
-                return (num / 1000).toFixed(1) + 'k';
-            }
-            return num.toString();
-        }
+        // function formatNumber(num) {
+        //     if (num >= 1000000) {
+        //         return (num / 1000000).toFixed(1) + 'M';
+        //     } else if (num >= 1000) {
+        //         return (num / 1000).toFixed(1) + 'k';
+        //     }
+        //     return num.toString();
+        // }
     </script>
 
     <!-- Media Modal (for image or video) -->
