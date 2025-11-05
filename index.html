@@ -910,9 +910,8 @@
         
         .release-banner .close-btn {
             position: absolute;
-            top: 50%;
+            top: 10px;
             right: 20px;
-            transform: translateY(-50%);
             background: none;
             border: none;
             color: white;
@@ -920,6 +919,7 @@
             cursor: pointer;
             opacity: 0.7;
             transition: opacity 0.3s;
+            z-index: 10;
         }
         
         .release-banner .close-btn:hover {
@@ -1186,6 +1186,14 @@
         </div>
     </section>
     <!-- End Hero Area -->
+    
+    <!-- Version 2 Release Banner -->
+    <div class="release-banner" id="version2Banner">
+        <button class="close-btn" onclick="closeVersion2Banner()">&times;</button>
+        <h4>🎉 Micro Pantry Version 2 just dropped!</h4>
+        <p>Micro Pantry Version 2 just dropped, and it's bringing a long-awaited feature: scanning! Now, managing your digital pantry is easier than ever—just snap a picture of your groceries or even your receipt and Micro Pantry will automatically add those ingredients to your pantry. (5k+ downloads)</p>
+    </div>
+    
     <!-- <section class="blog-section section" id="story-page">
         <div class="container">
             <div class="row">
@@ -1392,11 +1400,10 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-12">
-                    <h2 class="feature-title">Find out your meal's macros in an instant.</h2>
+                    <h2 class="feature-title">Micro Pantry's new scanning feature offers both food AND receipt scanning!</h2>
                     <ul>
-                        <li>Scan all your foods to keep up with your nutrition.</li>
-                        <li>Use Micro Pantry's food scanning function to log all your meals.</li>
-                        <li>Once scanned, each meal's ingredients are automatically removed from your Digital Pantry!</li>
+                        <li>Use Micro Pantry's speedy food recognition to log all of your ingredients effectively!</li>
+                        <li>Micro Pantry will also provide a confidence meter for every food it scans!</li>
                     </ul>
                 </div>
             </div>
@@ -2074,6 +2081,14 @@
             'width': 900,
             'autoplayVideos': true,
         });
+        
+        // Version 2 Banner Close Function
+        function closeVersion2Banner() {
+            const banner = document.getElementById('version2Banner');
+            if (banner) {
+                banner.style.display = 'none';
+            }
+        }
         
         // Release Banner and Download Counter
         // document.addEventListener('DOMContentLoaded', function() {
